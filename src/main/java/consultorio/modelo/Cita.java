@@ -12,6 +12,21 @@ public class Cita {
     private LocalDate fecha;
     private LocalTime hora;
     private EstadoCita estado;
+    //Se pide en el SQL
+    private Asistente asistente;
+    private String observaciones;
+    /*
+    CREATE TABLE IF NOT EXISTS citas (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    paciente_id         INTEGER NOT NULL,
+    medico_id           INTEGER NOT NULL,
+    asistente_id        INTEGER NOT NULL,
+    fecha_hora          TEXT NOT NULL,
+    estado              INTEGER NOT NULL DEFAULT 1,
+    observaciones       TEXT,
+     */
+
+
 
     public Cita(Integer id, Paciente paciente, Medico medico, LocalDate fecha, LocalTime hora, EstadoCita estado) {
         this.id = id;

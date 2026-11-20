@@ -1,11 +1,7 @@
 package consultorio.modelo;
 
-public class Medicamento {
-    private Integer id;
-    private Consulta consulta;
-    private Medicamento medicamento;
-    private Float dosis;
-    private Integer frecuencia;
-    private String duracion;
-    private String indicaciones;
+public class Medicamento extends CatalogoBase{
+    public Medicamento(int id, String nombre, String descripcion, boolean activo) {
+        super(id, nombre, descripcion, activo);
+    }
 }

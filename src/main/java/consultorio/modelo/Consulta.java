@@ -1,6 +1,7 @@
 package consultorio.modelo;
 
 import java.time.LocalDate;
+import java.util.LinkedList;
 
 public class Consulta {
     private Integer id;
@@ -12,6 +13,8 @@ public class Consulta {
     private String diagnostico;
     private String observaciones;
     private String tratamiento;
+    //tabla hija
+    private LinkedList<Prescripcion> prescripciones;
 
     public Consulta(Integer id, Paciente paciente, Medico medico, Cita cita, LocalDate fecha, String diagnostico, String observaciones, String tratamiento, String sintomas) {
         this.id = id;
@@ -23,6 +26,7 @@ public class Consulta {
         this.observaciones = observaciones;
         this.tratamiento = tratamiento;
         this.sintomas = sintomas;
+        this.prescripciones = new LinkedList<>();
     }
 
     public Integer getId() {

@@ -2,18 +2,23 @@ package consultorio.modelo;
 
 import consultorio.modelo.enums.Rol;
 
+import java.time.LocalDateTime;
+
 public abstract class Usuario extends Persona{
     protected String username;
     protected String contrasena;
     protected Boolean estado;
     protected Rol rol;
+    //aparece en sql
+    protected LocalDateTime fechaAlta;
 
-    public Usuario(Integer id, String nombre, String telefono, String correo, String username, String contrasena, Boolean estado, Rol rol) {
+    public Usuario(Integer id, String nombre, String telefono, String correo, String username, String contrasena, Boolean estado, Rol rol, LocalDateTime fechaAlta) {
         super(id, nombre, telefono, correo);
         this.username = username;
         this.contrasena = contrasena;
         this.estado = estado;
         this.rol = rol;
+        this.fechaAlta = fechaAlta;
     }
 
     public String getUsername() {
@@ -47,4 +52,10 @@ public abstract class Usuario extends Persona{
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+
+    public LocalDateTime getFechaAlta() {
+        return fechaAlta;
+    }
+
+    public abstract String getRutaFxml();
 }
