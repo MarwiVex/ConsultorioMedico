@@ -1,4 +1,4 @@
-package consultorio.modelo.admon;
+package consultorio.admon;
 
 public class EspecialidadAdmon {
 }

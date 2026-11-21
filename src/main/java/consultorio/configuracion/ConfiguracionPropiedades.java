@@ -1,4 +1,4 @@
-package consultorio.modelo.configuracion;
+package consultorio.configuracion;
 
 import java.io.FileInputStream;
 import java.io.IOException;

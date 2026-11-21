@@ -1,4 +1,4 @@
-package consultorio.modelo.configuracion;
+package consultorio.configuracion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
