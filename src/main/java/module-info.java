@@ -1,6 +1,7 @@
 module com.example.consultoriomedico {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.consultoriomedico to javafx.fxml;
