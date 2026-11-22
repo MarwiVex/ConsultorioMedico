@@ -1,5 +1,5 @@
 package consultorio.modelo.enums;
 
 public enum Sexo {
-    MASCULINO, FEMENINO
+    MASCULINO, FEMENINO, OTRO, NOESPECIFICADO
 }

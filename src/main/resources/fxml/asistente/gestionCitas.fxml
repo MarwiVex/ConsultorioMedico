@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultorio.controller.asistente.GestionCitasController">
+   <children>
+      <Label layoutX="25.0" layoutY="14.0" text="Gestión de Citas y Agenda">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="55.0" text="ID:" />
+      <TextField fx:id="textFieldID" disable="true" editable="false" layoutX="120.0" layoutY="50.0" prefHeight="30.0" prefWidth="160.0" promptText="Automático" />
+      <Label layoutX="25.0" layoutY="95.0" text="Paciente:" />
+      <ComboBox fx:id="comboBoxPaciente" layoutX="120.0" layoutY="90.0" prefHeight="30.0" prefWidth="160.0" promptText="Seleccionar paciente" />
+      <Label layoutX="25.0" layoutY="135.0" text="Médico:" />
+      <ComboBox fx:id="comboBoxMedico" layoutX="120.0" layoutY="130.0" prefHeight="30.0" prefWidth="160.0" promptText="Seleccionar médico" />
+      <Label layoutX="25.0" layoutY="175.0" text="Fecha:" />
+      <DatePicker fx:id="datePickerFecha" layoutX="120.0" layoutY="170.0" prefHeight="30.0" prefWidth="160.0" promptText="Fecha de la cita" />
+      <Label layoutX="25.0" layoutY="215.0" text="Hora:" />
+      <ComboBox fx:id="comboBoxHora" layoutX="120.0" layoutY="210.0" prefHeight="30.0" prefWidth="160.0" promptText="Hora" />
+      <Label layoutX="25.0" layoutY="255.0" text="Estado:" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="120.0" layoutY="250.0" prefHeight="30.0" prefWidth="160.0" promptText="Estado" />
+      <Label layoutX="25.0" layoutY="295.0" text="Observaciones:" />
+      <TextField fx:id="textFieldObservaciones" layoutX="120.0" layoutY="290.0" prefHeight="30.0" prefWidth="160.0" promptText="Observaciones (opcional)" />
+      <TableView fx:id="tableViewCitas" layoutX="300.0" layoutY="50.0" onMouseClicked="#clicTabla" prefHeight="320.0" prefWidth="435.0" />
+      <ButtonBar layoutX="25.0" layoutY="385.0" prefHeight="40.0" prefWidth="710.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#clicAgendar" text="Agendar" />
+            <Button mnemonicParsing="false" onAction="#clicModificar" text="Modificar" />
+            <Button mnemonicParsing="false" onAction="#clicRegistrarLlegada" text="Registrar Llegada" />
+            <Button mnemonicParsing="false" onAction="#clicCancelar" text="Cancelar Cita" />
+            <Button mnemonicParsing="false" onAction="#clicLimpiar" text="Limpiar" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

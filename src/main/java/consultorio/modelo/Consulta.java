@@ -5,9 +5,9 @@ import java.util.LinkedList;
 
 public class Consulta {
     private Integer id;
-    private Paciente paciente;
-    private Medico medico;
-    private Cita cita;
+    private Paciente pacienteID;
+    private Medico medicoID;
+    private Cita citaID;
     private LocalDate fecha;
     private String sintomas;
     private String diagnostico;
@@ -16,16 +16,37 @@ public class Consulta {
     //tabla hija
     private LinkedList<Prescripcion> prescripciones;
 
-    public Consulta(Integer id, Paciente paciente, Medico medico, Cita cita, LocalDate fecha, String diagnostico, String observaciones, String tratamiento, String sintomas) {
+    public Consulta(Integer id, Paciente pacienteID, Medico medicoID, Cita citaID, LocalDate fecha, String diagnostico, String observaciones, String tratamiento, String sintomas) {
         this.id = id;
-        this.paciente = paciente;
-        this.medico = medico;
-        this.cita = cita;
+        this.pacienteID = pacienteID;
+        this.medicoID = medicoID;
+        this.citaID = citaID;
         this.fecha = fecha;
         this.diagnostico = diagnostico;
         this.observaciones = observaciones;
         this.tratamiento = tratamiento;
         this.sintomas = sintomas;
+        this.prescripciones = new LinkedList<>();
+    }
+
+    public Consulta(Paciente pacienteID, Medico medicoID, Cita citaID, String diagnostico, String sintomas, String observaciones, String tratamiento) {
+        this.pacienteID = pacienteID;
+        this.medicoID = medicoID;
+        this.citaID = citaID;
+        this.fecha = LocalDate.now();
+        this.diagnostico = diagnostico;
+        this.sintomas = sintomas;
+        this.observaciones = observaciones;
+        this.tratamiento = tratamiento;
+        this.prescripciones = new LinkedList<>();
+    }
+
+    public Consulta(Paciente pacienteID, Medico medicoID, Cita citaID, String diagnostico) {
+        this.pacienteID = pacienteID;
+        this.medicoID = medicoID;
+        this.citaID = citaID;
+        this.fecha = LocalDate.now();
+        this.diagnostico = diagnostico;
         this.prescripciones = new LinkedList<>();
     }
 
@@ -37,12 +58,12 @@ public class Consulta {
         this.id = id;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
+    public Paciente getPacienteID() {
+        return pacienteID;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setPacienteID(Paciente pacienteID) {
+        this.pacienteID = pacienteID;
     }
 
     public String getSintomas() {
@@ -85,19 +106,27 @@ public class Consulta {
         this.fecha = fecha;
     }
 
-    public Medico getMedico() {
-        return medico;
+    public Medico getMedicoID() {
+        return medicoID;
     }
 
-    public void setMedico(Medico medico) {
-        this.medico = medico;
+    public void setMedicoID(Medico medicoID) {
+        this.medicoID = medicoID;
     }
 
-    public Cita getCita() {
-        return cita;
+    public Cita getCitaID() {
+        return citaID;
     }
 
-    public void setCita(Cita cita) {
-        this.cita = cita;
+    public void setCitaID(Cita citaID) {
+        this.citaID = citaID;
+    }
+
+    public LinkedList<Prescripcion> getPrescripciones() {
+        return prescripciones;
+    }
+
+    public void setPrescripciones(LinkedList<Prescripcion> prescripciones) {
+        this.prescripciones = prescripciones;
     }
 }

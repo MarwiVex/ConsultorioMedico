@@ -1,4 +1,4 @@
 package consultorio.servicios;
 
-public class Consulta {
+public class ConsultaServicio {
 }

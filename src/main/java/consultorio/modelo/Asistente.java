@@ -9,8 +9,16 @@ public class Asistente extends Usuario{
         super(id, nombre, telefono, correo, username, contrasena, estado, rol, fechaAlta);
     }
 
+    public Asistente(String nombre, String username, String contrasena) {
+        super(nombre, username, contrasena, Rol.ASISTENTE);
+    }
+
+    public Asistente(String nombre, String telefono, String correo, String username, String contrasena) {
+        super(nombre, telefono, correo, username, contrasena, Rol.ASISTENTE);
+    }
+
     @Override
     public String getRutaFxml() {
-        return "fxml/asistenteMenu.fxml";
+        return "/fxml/asistente/asistenteMenu.fxml";
     }
 }

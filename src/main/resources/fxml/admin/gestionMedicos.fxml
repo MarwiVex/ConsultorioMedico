@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="430.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultorio.controller.admin.GestionMedicosController">
+   <children>
+      <Label layoutX="25.0" layoutY="14.0" text="Gestión de Médicos">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="55.0" text="ID:" />
+      <TextField fx:id="textFieldID" disable="true" editable="false" layoutX="120.0" layoutY="50.0" prefHeight="30.0" prefWidth="160.0" promptText="Automático" />
+      <Label layoutX="25.0" layoutY="92.0" text="Nombre:" />
+      <TextField fx:id="textFieldNombre" layoutX="120.0" layoutY="87.0" prefHeight="30.0" prefWidth="160.0" promptText="Nombre completo" />
+      <Label layoutX="25.0" layoutY="129.0" text="Teléfono:" />
+      <TextField fx:id="textFieldTelefono" layoutX="120.0" layoutY="124.0" prefHeight="30.0" prefWidth="160.0" promptText="Teléfono" />
+      <Label layoutX="25.0" layoutY="166.0" text="Correo:" />
+      <TextField fx:id="textFieldCorreo" layoutX="120.0" layoutY="161.0" prefHeight="30.0" prefWidth="160.0" promptText="Correo electrónico" />
+      <Label layoutX="25.0" layoutY="203.0" text="Especialidad:" />
+      <ComboBox fx:id="comboBoxEspecialidad" layoutX="120.0" layoutY="198.0" prefHeight="30.0" prefWidth="160.0" promptText="Especialidad" />
+      <Label layoutX="25.0" layoutY="240.0" text="Usuario:" />
+      <TextField fx:id="textFieldUsuario" layoutX="120.0" layoutY="235.0" prefHeight="30.0" prefWidth="160.0" promptText="Usuario" />
+      <Label layoutX="25.0" layoutY="277.0" text="Contraseña:" />
+      <PasswordField fx:id="textFieldContrasenia" layoutX="120.0" layoutY="272.0" prefHeight="30.0" prefWidth="160.0" promptText="Contraseña" />
+      <Label layoutX="25.0" layoutY="314.0" text="Estado:" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="120.0" layoutY="309.0" prefHeight="30.0" prefWidth="160.0" promptText="Estado" />
+      <TableView fx:id="tableViewMedicos" layoutX="300.0" layoutY="50.0" onMouseClicked="#clicTabla" prefHeight="295.0" prefWidth="415.0" />
+      <ButtonBar layoutX="25.0" layoutY="365.0" prefHeight="40.0" prefWidth="690.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#clicAgregar" text="Agregar" />
+            <Button mnemonicParsing="false" onAction="#clicActivarDesactivar" text="Activar/Desactivar" />
+            <Button mnemonicParsing="false" onAction="#clicLimpiar" text="Limpiar" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

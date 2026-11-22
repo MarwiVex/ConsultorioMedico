@@ -13,6 +13,16 @@ public abstract class Persona {
         this.correo = correo;
     }
 
+    public Persona(String nombre, String telefono, String correo) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+        this.correo = correo;
+    }
+
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
     public String getNombre() {
         return nombre;
     }

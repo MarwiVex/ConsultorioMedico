@@ -12,7 +12,7 @@ public class ConfiguracionPropiedades {
     private LocalTime horaFin;
     private String diasAtencion;
     private String url;
-    private Properties propiedades;
+    private Properties propiedades = new Properties();
     private static ConfiguracionPropiedades configuracionPropiedades;
 
     private ConfiguracionPropiedades(){

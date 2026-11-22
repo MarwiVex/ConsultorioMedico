@@ -9,9 +9,17 @@ public class Admin extends Usuario{
         super(id, nombre, telefono, correo, username, contrasena, estado, rol, fechaAlta);
     }
 
+    public Admin(String nombre, String username, String contrasena) {
+        super(nombre, username, contrasena, Rol.ADMIN);
+    }
+
+    public Admin(String nombre, String telefono, String correo, String username, String contrasena) {
+        super(nombre, telefono, correo, username, contrasena, Rol.ADMIN);
+    }
+
     @Override
     public String getRutaFxml() {
-        return "/fxml/adminMenu.fxml";
+        return "/fxml/admin/adminMenu.fxml";
     }
 
 

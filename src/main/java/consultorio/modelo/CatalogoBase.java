@@ -4,13 +4,25 @@ public abstract class CatalogoBase {
     protected int id;
     protected String nombre;
     protected String descripcion;
-    protected boolean activo;
+    protected boolean estado;
 
-    public CatalogoBase(int id, String nombre, String descripcion, boolean activo) {
+    public CatalogoBase(int id, String nombre, String descripcion, boolean estado) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.activo = activo;
+        this.estado = estado;
+    }
+
+    public CatalogoBase(String nombre) {
+        this.nombre = nombre;
+        this.descripcion = null;
+        this.estado = true;
+    }
+
+    public CatalogoBase(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.estado = true;
     }
 
     public int getId() {
@@ -37,16 +49,23 @@ public abstract class CatalogoBase {
         this.nombre = nombre;
     }
 
-    public boolean isActivo() {
-        return activo;
+    public boolean getEstado() {
+        return estado;
     }
 
-    public void setActivo(boolean activo) {
-        this.activo = activo;
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
 
     @Override
     public String toString() {
         return nombre;
+    }
+
+    public String getEstadoTexto() {
+        if (this.estado) {
+            return "Activo";
+        }
+        return "Inactivo";
     }
 }

@@ -31,16 +31,17 @@ public class ConexionBD {
         try{
             resultado = conexion.prepareStatement(consulta).executeQuery();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
         return resultado;
     }
 
     public Boolean ejecutarInstruccion(String instruccion){
         try {
-            conexion.prepareStatement(instruccion).executeQuery();
+            conexion.prepareStatement(instruccion).execute();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
+            return false;
         }
         return true;
     }

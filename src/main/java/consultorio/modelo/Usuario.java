@@ -21,6 +21,24 @@ public abstract class Usuario extends Persona{
         this.fechaAlta = fechaAlta;
     }
 
+    public Usuario(String nombre, String username, String contrasena, Rol rol) {
+        super(nombre);
+        this.username = username;
+        this.contrasena = contrasena;
+        this.rol = rol;
+        this.estado = true;
+        this.fechaAlta = LocalDateTime.now();
+    }
+
+    public Usuario(String nombre, String telefono, String correo, String username, String contrasena, Rol rol) {
+        super(nombre, telefono, correo);
+        this.username = username;
+        this.contrasena = contrasena;
+        this.rol = rol;
+        this.estado = true;
+        this.fechaAlta = LocalDateTime.now();
+    }
+
     public String getUsername() {
         return username;
     }
@@ -55,6 +73,13 @@ public abstract class Usuario extends Persona{
 
     public LocalDateTime getFechaAlta() {
         return fechaAlta;
+    }
+
+    public String getEstadoTexto() {
+        if (this.estado) {
+            return "Activo";
+        }
+        return "Inactivo";
     }
 
     public abstract String getRutaFxml();

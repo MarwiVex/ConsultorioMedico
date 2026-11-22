@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultorio.controller.LoginController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="260.0" style="-fx-background-color: #1e293b;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/8068282.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="300.0" layoutY="50.0" text="Bienvenido" textFill="#1e293b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="85.0" text="Ingresar credenciales para acceder">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="130.0" text="Usuario:" />
+      <TextField fx:id="textFieldUsuario" layoutX="300.0" layoutY="152.0" prefHeight="35.0" prefWidth="295.0" promptText="Ingresa tu nombre de usuario" />
+      <Label layoutX="300.0" layoutY="202.0" text="Contraseña:" />
+      <PasswordField fx:id="textFieldContrasenia" layoutX="300.0" layoutY="224.0" prefHeight="35.0" prefWidth="295.0" promptText="Ingresa tu contraseña" />
+      <Button alignment="CENTER" defaultButton="true" layoutX="300.0" layoutY="290.0" mnemonicParsing="false" onAction="#clicLogin" prefHeight="38.0" prefWidth="295.0" text="Iniciar Sesión" textAlignment="CENTER" />
+   </children>
 </AnchorPane>

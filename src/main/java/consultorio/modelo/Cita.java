@@ -7,13 +7,13 @@ import java.time.LocalTime;
 
 public class Cita {
     private Integer id;
-    private Paciente paciente;
-    private Medico medico;
+    private Paciente pacienteID;
+    private Medico medicoID;
     private LocalDate fecha;
     private LocalTime hora;
     private EstadoCita estado;
     //Se pide en el SQL
-    private Asistente asistente;
+    private Asistente asistenteID;
     private String observaciones;
     /*
     CREATE TABLE IF NOT EXISTS citas (
@@ -27,14 +27,34 @@ public class Cita {
      */
 
 
-
-    public Cita(Integer id, Paciente paciente, Medico medico, LocalDate fecha, LocalTime hora, EstadoCita estado) {
+    public Cita(Integer id, Paciente pacienteID, Asistente asistenteID, String observaciones, EstadoCita estado, LocalDate fecha, LocalTime hora, Medico medicoID) {
         this.id = id;
-        this.paciente = paciente;
-        this.medico = medico;
+        this.pacienteID = pacienteID;
+        this.asistenteID = asistenteID;
+        this.observaciones = observaciones;
+        this.estado = estado;
         this.fecha = fecha;
         this.hora = hora;
-        this.estado = estado;
+        this.medicoID = medicoID;
+    }
+
+    public Cita(Paciente pacienteID, Medico medicoID, Asistente asistenteID, LocalDate fecha, LocalTime hora) {
+        this.pacienteID = pacienteID;
+        this.medicoID = medicoID;
+        this.asistenteID = asistenteID;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.estado = EstadoCita.PROGRAMADA;
+    }
+
+    public Cita(Paciente pacienteID, Medico medicoID, Asistente asistenteID, LocalDate fecha, LocalTime hora, String observaciones) {
+        this.pacienteID = pacienteID;
+        this.medicoID = medicoID;
+        this.asistenteID = asistenteID;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.observaciones = observaciones;
+        this.estado = EstadoCita.PROGRAMADA;
     }
 
     public Integer getId() {
@@ -45,20 +65,20 @@ public class Cita {
         this.id = id;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
+    public Paciente getPacienteID() {
+        return pacienteID;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setPacienteID(Paciente pacienteID) {
+        this.pacienteID = pacienteID;
     }
 
-    public Medico getMedico() {
-        return medico;
+    public Medico getMedicoID() {
+        return medicoID;
     }
 
-    public void setMedico(Medico medico) {
-        this.medico = medico;
+    public void setMedicoID(Medico medicoID) {
+        this.medicoID = medicoID;
     }
 
     public LocalDate getFecha() {
@@ -83,5 +103,21 @@ public class Cita {
 
     public void setEstado(EstadoCita estado) {
         this.estado = estado;
+    }
+
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    public Asistente getAsistenteID() {
+        return asistenteID;
+    }
+
+    public void setAsistenteID(Asistente asistenteID) {
+        this.asistenteID = asistenteID;
     }
 }
