@@ -1,7 +1,0 @@
-│           │   ├── login.fxml
-│           │   ├── admin_dashboard.fxml
-│           │   ├── asistente_dashboard.fxml
-│           │   ├── medico_dashboard.fxml
-│           │   ├── nueva_consulta.fxml
-│           │   ├── historial_paciente.fxml
-│           │   └── perfil_usuario.fxml

@@ -80,6 +80,7 @@ public abstract class Usuario extends Persona{
             return "Activo";
         }
         return "Inactivo";
+
     }
 
     public abstract String getRutaFxml();

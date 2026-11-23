@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultorio.controller.asistente.GestionCitasController">
+<AnchorPane prefHeight="480.0" prefWidth="820.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="consultorio.controller.asistente.GestionCitasController">
    <children>
       <Label layoutX="25.0" layoutY="14.0" text="Gestión de Citas y Agenda">
          <font>
@@ -31,8 +31,16 @@
       <ComboBox fx:id="comboBoxEstado" layoutX="120.0" layoutY="250.0" prefHeight="30.0" prefWidth="160.0" promptText="Estado" />
       <Label layoutX="25.0" layoutY="295.0" text="Observaciones:" />
       <TextField fx:id="textFieldObservaciones" layoutX="120.0" layoutY="290.0" prefHeight="30.0" prefWidth="160.0" promptText="Observaciones (opcional)" />
-      <TableView fx:id="tableViewCitas" layoutX="300.0" layoutY="50.0" onMouseClicked="#clicTabla" prefHeight="320.0" prefWidth="435.0" />
-      <ButtonBar layoutX="25.0" layoutY="385.0" prefHeight="40.0" prefWidth="710.0">
+      <Label layoutX="305.0" layoutY="55.0" text="Fecha:" />
+      <DatePicker fx:id="datePickerFiltroFecha" layoutX="355.0" layoutY="50.0" prefHeight="30.0" prefWidth="135.0" promptText="Fecha" />
+      <ComboBox fx:id="comboBoxFiltroPeriodo" layoutX="500.0" layoutY="50.0" prefHeight="30.0" prefWidth="135.0" promptText="Día / Semana" />
+      <ComboBox fx:id="comboBoxFiltroEstado" layoutX="645.0" layoutY="50.0" prefHeight="30.0" prefWidth="150.0" promptText="Estado" />
+      <Label layoutX="305.0" layoutY="95.0" text="Buscar:" />
+      <TextField fx:id="textFieldBuscarPaciente" layoutX="355.0" layoutY="90.0" prefHeight="30.0" prefWidth="240.0" promptText="Buscar paciente por nombre o ID" />
+      <Button layoutX="605.0" layoutY="90.0" mnemonicParsing="false" onAction="#clicFiltrar" prefHeight="30.0" prefWidth="90.0" text="Filtrar" />
+      <Button layoutX="705.0" layoutY="90.0" mnemonicParsing="false" onAction="#clicVerTodas" prefHeight="30.0" prefWidth="90.0" text="Ver Todas" />
+      <TableView fx:id="tableViewCitas" layoutX="305.0" layoutY="130.0" onMouseClicked="#clicTabla" prefHeight="285.0" prefWidth="490.0" />
+      <ButtonBar layoutX="25.0" layoutY="425.0" prefHeight="40.0" prefWidth="770.0">
          <buttons>
             <Button mnemonicParsing="false" onAction="#clicAgendar" text="Agendar" />
             <Button mnemonicParsing="false" onAction="#clicModificar" text="Modificar" />

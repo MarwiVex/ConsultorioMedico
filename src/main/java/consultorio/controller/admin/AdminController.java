@@ -9,8 +9,6 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 
 public class AdminController {
-    private SesionUsuario sesionUsuario = SesionUsuario.getInstance();
-
     public void clicEspecialidades(ActionEvent actionEvent) {
         Ventanas.abrirVentanaModal("/fxml/admin/gestionEspecialidades.fxml", "Gestión de Especialidades");
     }

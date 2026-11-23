@@ -3,10 +3,8 @@ package consultorio.controller.admin;
 import consultorio.admon.EspecialidadAdmon;
 import consultorio.admon.UsuarioAdmon;
 import consultorio.configuracion.Ventanas;
-import consultorio.modelo.Asistente;
 import consultorio.modelo.Especialidad;
 import consultorio.modelo.Medico;
-import consultorio.modelo.Usuario;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -60,7 +58,7 @@ public class GestionMedicosController implements Initializable {
     public GestionMedicosController(){
         especialidadAdmon= new EspecialidadAdmon();
         usuarioAdmon= new UsuarioAdmon();
-        especialidades = especialidadAdmon.obtenerEspecialidades();
+        especialidades = especialidadAdmon.obtenerEspecialidadesActivas();
     }
 
     public void clicTabla(MouseEvent event) {
@@ -189,6 +187,4 @@ public class GestionMedicosController implements Initializable {
         }
         return true;
     }
-
-
 }

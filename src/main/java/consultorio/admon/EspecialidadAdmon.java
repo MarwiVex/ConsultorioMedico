@@ -23,6 +23,29 @@ public class EspecialidadAdmon {
         return "Sin especialidad";
     }
 
+    public LinkedList<Especialidad> obtenerEspecialidadesActivas() {
+        LinkedList<Especialidad> especialidades = new LinkedList<>();
+        String consulta = "SELECT * FROM especialidades WHERE activo = 1;";
+
+        try {
+            ResultSet resultado = conexion.ejecutarConsulta(consulta);
+            while (resultado.next()) {
+                int id = resultado.getInt("id");
+                String nombre = resultado.getString("nombre");
+                String descripcion = resultado.getString("descripcion");
+                boolean activo = true;
+                if (resultado.getInt("activo") != 1) {
+                    activo = false;
+                }
+                Especialidad especialidad = new Especialidad(id, nombre, descripcion, activo);
+                especialidades.add(especialidad);
+            }
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+        return especialidades;
+    }
+
     public LinkedList<Especialidad> obtenerEspecialidades() {
         LinkedList<Especialidad> especialidades = new LinkedList<>();
         String consulta = "SELECT * FROM especialidades;";

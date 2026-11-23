@@ -1,20 +1,15 @@
 package consultorio.controller.admin;
 
 import consultorio.admon.EspecialidadAdmon;
-import consultorio.admon.PacienteAdmon;
 import consultorio.admon.UsuarioAdmon;
 import consultorio.configuracion.Ventanas;
-import consultorio.modelo.Asistente;
 import consultorio.modelo.Especialidad;
-import consultorio.modelo.Paciente;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
 
 import java.net.URL;
 import java.util.LinkedList;
@@ -56,11 +51,12 @@ public class GestionEspecialidadesController implements Initializable {
         textFieldID.setText(String.valueOf(especialidad.getId()));
         textFieldNombre.setText(especialidad.getNombre());
         textFieldDescripcion.setText(especialidad.getDescripcion());
-        String estado = "Activo";
-        if(!especialidad.getEstado()){
-            estado = "Inactivo";
+        if(especialidad.getEstado()){
+            comboBoxEstado.getSelectionModel().select("Activo");
+        }else {
+            comboBoxEstado.getSelectionModel().select("Inactivo");
         }
-        comboBoxEstado.getSelectionModel().select(estado);
+
 
         LinkedList<String> nombres = new LinkedList<>();
         nombres = usuarioAdmon.obtenerNombresMedicosPorEspecialidad(especialidad.getId());
@@ -105,9 +101,9 @@ public class GestionEspecialidadesController implements Initializable {
             if(registrado){
                 cargarTabla();
                 clicLimpiar(null);
-                Ventanas.mostrarInfo("Especialidad agregada correctamente");
+                Ventanas.mostrarInfo("Especialidad editada correctamente");
             }else {
-                Ventanas.mostrarError("No se pudo agregar La especialidad");
+                Ventanas.mostrarError("No se pudo editar La especialidad");
             }
         } else{
             Ventanas.mostrarError("Llene todos los campos");
@@ -158,7 +154,7 @@ public class GestionEspecialidadesController implements Initializable {
 
     public void cargarTabla(){
         try{
-            tableViewEspecialidades.getItems().setAll(especialidadAdmon.obtenerEspecialidades());
+            tableViewEspecialidades.getItems().setAll(especialidadAdmon.obtenerEspecialidadesActivas());
         } catch (Exception e) {
             System.err.println("error al cargar tabla");
         }

@@ -31,9 +31,23 @@ public class GestionCitasController implements Initializable {
     @FXML
     private TextField textFieldObservaciones;
     @FXML
+    private DatePicker datePickerFiltroFecha;
+    @FXML
+    private ComboBox<String> comboBoxFiltroPeriodo;
+    @FXML
+    private ComboBox<String> comboBoxFiltroEstado;
+    @FXML
+    private TextField textFieldBuscarPaciente;
+    @FXML
     private TableView<Cita> tableViewCitas;
 
     public void clicTabla(MouseEvent event) {
+    }
+
+    public void clicFiltrar(ActionEvent event) {
+    }
+
+    public void clicVerTodas(ActionEvent event) {
     }
 
     public void clicAgendar(ActionEvent event) {
